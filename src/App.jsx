@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import sun from "./assets/icon-sun.svg";
 import moon from "./assets/icon-moon.svg";
@@ -7,19 +7,28 @@ import AddTasks from "./components/AddTask";
 import Options from "./components/Options";
 
 function App() {
+  const [isLight, setIsLight] = useState(true);
   const [todos, setTodos] = useState([
     { id: Math.random(), text: "Learn HTML", isCompleted: false },
     { id: Math.random(), text: "Learn CSS", isCompleted: false },
   ]);
 
   const changeTheme = () => {
-    const isLight = document.body.classList.contains("light");
     if (isLight) {
+      setIsLight((isLight) => !isLight);
       document.body.classList.remove("light");
     } else {
+      setIsLight((isLight) => !isLight);
       document.body.classList.add("light");
     }
   };
+  useEffect(() => {
+    if (document.body.classList.contains("light")) {
+      setIsLight(true);
+    } else {
+      setIsLight(false);
+    }
+  });
 
   return (
     <>
@@ -28,7 +37,7 @@ function App() {
         <div className="header">
           <h3 className="title">TODO</h3>
 
-          <img onClick={changeTheme} src={`isLight ? ${sun} : ${moon}`} />
+          <img onClick={changeTheme} src={isLight ? sun : moon} />
         </div>
         <AddTasks
           onAdd={(text) => {
@@ -47,15 +56,6 @@ function App() {
           onRemove={(todo) => {
             setTodos(todos.filter((t) => t.id !== todo.id));
           }}
-          /* onEdit={(todo) => {
-            todos.map((t) => {
-              if (t.id === todo.id) {
-                return todo;
-              } else {
-                return t;
-              }
-            });
-          }}*/
           onChangeStyles={(todo) => {
             const updatedTodos = todos.map((item) => {
               if (item.id === todo.id) {
