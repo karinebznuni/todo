@@ -2,6 +2,8 @@ export default function Options({
   todos,
   onClearCompleted,
   onFilterCompleted,
+  onFilterActive,
+  onFilterAll,
 }) {
   const leftTodos = todos.filter((todo) => !todo.isCompleted).length;
 
@@ -10,8 +12,8 @@ export default function Options({
       <div className="options">
         <div className="optiions-left-margin">{leftTodos} items left</div>
         <div className="types">
-          <div>All</div>
-          <div onClick={onClearCompleted}>Active</div>
+          <div onClick={onFilterAll}>All</div>
+          <div onClick={onFilterActive}>Active</div>
           <div onClick={onFilterCompleted}>Completed</div>
         </div>
         <div className="optiions-right-margin" onClick={onClearCompleted}>

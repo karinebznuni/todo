@@ -30,7 +30,9 @@ export default function Todos({ todos, onRemove, onChangeStyles, onEdit }) {
               <div
                 className="todo-text"
                 style={{
-                  color: todo.isCompleted ? "purple" : "white",
+                  color: todo.isCompleted
+                    ? "purple"
+                    : " var(--background-color)",
                   textDecoration: todo.isCompleted ? "line-through" : "none",
                 }}
                 onClick={() => {
