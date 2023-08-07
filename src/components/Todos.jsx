@@ -17,7 +17,7 @@ export default function Todos({ todos, onRemove, onChangeStyles, onEdit }) {
                     to bottom,
                     hsl(192, 100%, 67%),
                     hsl(280, 87%, 65%)`
-                    : "white",
+                    : "var(--todo-background)",
                 }}
                 onClick={() => {
                   onChangeStyles(todo);
@@ -31,8 +31,8 @@ export default function Todos({ todos, onRemove, onChangeStyles, onEdit }) {
                 className="todo-text"
                 style={{
                   color: todo.isCompleted
-                    ? "purple"
-                    : " var(--background-color)",
+                    ? "var(--text-dimmed)"
+                    : "var(--text-color)",
                   textDecoration: todo.isCompleted ? "line-through" : "none",
                 }}
                 onClick={() => {
