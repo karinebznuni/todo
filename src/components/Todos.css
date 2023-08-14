@@ -42,7 +42,7 @@ input::placeholder {
 
 .tasks {
   width: 100%;
-  margin-top: 2em;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -71,48 +71,4 @@ input::placeholder {
   margin-right: 0.8em;
   margin-left: 0.8em;
   cursor: pointer;
-}
-
-.options {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--background-todo);
-  padding: 0.6em;
-  border-bottom: 1px solid var(--text-dimmed);
-  color: var(--text-dimmed);
-  font-size: 12px;
-  border-bottom: none;
-  cursor: pointer;
-  border-radius: 5px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.types {
-  display: flex;
-  gap: 0.5em;
-}
-
-.types-active {
-  color: hsl(220, 98%, 61%);
-}
-
-.optiions-left-margin {
-  margin-left: 0.8em;
-}
-
-.optiions-left-margin:hover {
-  color: var(--text-color-hover);
-}
-
-.optiions-right-margin {
-  margin-right: 0.8em;
-}
-
-.optiions-right-margin:hover {
-  color: var(--text-color-hover);
-}
-
-.types div:hover {
-  color: var(--text-color-hover);
 }

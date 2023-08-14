@@ -1,3 +1,5 @@
+import "./Options.css";
+
 export default function Options({
   todos,
   onClearCompleted,
@@ -10,14 +12,21 @@ export default function Options({
   return (
     <>
       <div className="options">
-        <div className="optiions-left-margin">{leftTodos} items left</div>
+        <div className="options-left-margin">{leftTodos} items left</div>
         <div className="types">
           <div onClick={onFilterAll}>All</div>
           <div onClick={onFilterActive}>Active</div>
           <div onClick={onFilterCompleted}>Completed</div>
         </div>
-        <div className="optiions-right-margin" onClick={onClearCompleted}>
+        <div className="options-right-margin" onClick={onClearCompleted}>
           Clear comleted
+        </div>
+      </div>
+      <div className="options options-mobile">
+        <div className="types types-mobile">
+          <div onClick={onFilterAll}>All</div>
+          <div onClick={onFilterActive}>Active</div>
+          <div onClick={onFilterCompleted}>Completed</div>
         </div>
       </div>
     </>
