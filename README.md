@@ -26,7 +26,7 @@ Users should be able to:
 
 ## My process
 
-### Built with
+### Built with😊
 
 - HTML5
 - CSS3
