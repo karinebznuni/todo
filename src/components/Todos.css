@@ -1,0 +1,74 @@
+.add-task {
+  width: 100%;
+  display: flex;
+  margin-top: 2em;
+  background-color: var(--background-todo);
+  padding: 10px;
+  border-radius: 5px;
+}
+.circle {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.8em;
+  margin-left: 0.8em;
+  border: 1px solid hsl(236, 9%, 61%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle:hover {
+  cursor: pointer;
+}
+
+input,
+.todo-text {
+  width: 200px;
+  padding: 0.3em 0;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.completed-todo-text {
+  color: var(--text-dimmed);
+}
+input::placeholder {
+  color: var(--text-dimmed);
+}
+
+.tasks {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.task {
+  width: 100%;
+  background-color: var(--background-todo);
+  padding: 10px;
+  border-bottom: 1px solid var(--text-dimmed);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+}
+
+.theme-switcher {
+  cursor: pointer;
+}
+
+.cross {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.8em;
+  margin-left: 0.8em;
+  cursor: pointer;
+}
